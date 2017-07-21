@@ -49,7 +49,7 @@ export default class HomeScreen extends Component {
     this.navigate(STATE_SCENE_NAME);
   }
 
-  alerte() {
+  static alerte() {
     Alert.alert(
       'Alert Title',
       'My Alert Msg',
