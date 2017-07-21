@@ -4,6 +4,7 @@ import {
   Button,
   StyleSheet,
   View,
+  Alert,
 } from 'react-native';
 
 import Info from '../components/Info';
@@ -48,6 +49,19 @@ export default class HomeScreen extends Component {
     this.navigate(STATE_SCENE_NAME);
   }
 
+  alerte() {
+    Alert.alert(
+      'Alert Title',
+      'My Alert Msg',
+      [
+        { text: 'Ask me later', onPress: () => console.log('Ask me later pressed') },
+        { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
+      ],
+      { cancelable: false },
+    );
+  }
+
   render() {
     return (
       <ScrollView>
@@ -69,6 +83,12 @@ export default class HomeScreen extends Component {
           <Button
             onPress={this.navigateToState}
             title="State"
+          />
+        </View>
+        <View style={styles.margin}>
+          <Button
+            onPress={this.alerte}
+            title="Alerte !"
           />
         </View>
       </ScrollView>
